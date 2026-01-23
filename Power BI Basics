@@ -1,0 +1,125 @@
+# Power BI – Interview & Assignment Questions
+
+---
+
+## Question 1: What is Power BI and why is it used in businesses?
+
+**Answer:**  
+Power BI is a **Business Intelligence (BI) tool** developed by Microsoft that helps convert raw data into meaningful insights through **interactive dashboards and reports**.
+
+**Why businesses use Power BI:**
+- Analyze large datasets easily  
+- Create interactive and visual reports  
+- Monitor KPIs and performance  
+- Combine data from multiple sources  
+- Support data-driven decision making  
+
+---
+
+## Question 2: Name and explain the three main components of Power BI.
+
+**Answer:**
+
+### 1. Power BI Desktop
+- Used to connect, transform, and model data
+- Create reports and dashboards
+
+### 2. Power BI Service
+- Cloud-based platform
+- Used to publish, share, and collaborate on reports
+
+### 3. Power BI Mobile App
+- Used to view reports and dashboards on mobile devices
+
+---
+
+## Question 3: Explain the Power BI workflow.
+
+**Answer:**
+
+1. Connect to data sources  
+2. Clean and transform data using Power Query  
+3. Create relationships and data models  
+4. Build reports and visualizations  
+5. Publish reports to Power BI Service  
+6. Share dashboards and schedule refresh  
+
+---
+
+## Question 4: List any four data cleaning tasks that can be performed in Power Query.
+
+**Answer:**
+
+- Removing duplicate rows  
+- Handling missing or null values  
+- Changing data types  
+- Splitting and merging columns  
+
+---
+
+## Question 5: Write step-by-step instructions to load the dataset in Power BI.
+
+**Answer:**
+
+1. Open **Power BI Desktop**
+2. Click on **Get Data**
+3. Select the data source (Excel / CSV / PDF)
+4. Browse and select the dataset file
+5. Click **Load** or **Transform Data**
+6. Perform data cleaning if required
+7. Click **Close & Apply**
+
+---
+
+## Question 6: Define Data View, Report View, and Model View.
+
+**Answer:**
+
+### Data View
+- Displays data in tabular format
+- Used to check and validate data
+
+### Report View
+- Used to create charts and visualizations
+- Main view for dashboard creation
+
+### Model View
+- Shows relationships between tables
+- Used to manage data models
+
+---
+
+## Question 7: Discuss the different data sources that Power BI supports.
+
+**Answer:**
+
+Power BI supports multiple data sources such as:
+- Excel and CSV files
+- SQL Server and databases
+- PDF files
+- Web data
+- SharePoint
+- Azure and cloud services
+
+---
+
+## Question 8: Split Owner Name into First Name and Last Name.
+
+**Answer:**
+
+### Steps in Power Query:
+
+1. Open **Power Query Editor**
+2. Select the `Owner_Name` column
+3. Go to **Transform → Split Column**
+4. Choose **By Delimiter**
+5. Select **Space** as delimiter
+6. Click **OK**
+7. Rename the columns as:
+   - `First Name`
+   - `Last Name`
+
+Example:  
+`Rahul Mehta` → First Name: **Rahul**, Last Name: **Mehta**
+
+---
