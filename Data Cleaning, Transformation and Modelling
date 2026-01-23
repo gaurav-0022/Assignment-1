@@ -1,0 +1,112 @@
+# Power BI – Data Preparation & Modeling Assignment
+
+---
+
+## Question 1: What is Data Loading in Power BI and why is it considered the first step of analysis?
+
+**Answer:**  
+Data Loading in Power BI is the process of importing data from different sources such as Excel, CSV, databases, or web sources into Power BI.
+
+It is considered the first step of analysis because:
+- Analysis cannot be performed without data
+- It helps verify data structure and quality
+- It prepares data for cleaning, modeling, and visualization
+- All further steps depend on successfully loaded data
+
+---
+
+## Question 2: Explain the difference between “Load” and “Transform Data” in Power BI.
+
+**Answer:**
+
+| Load | Transform Data |
+|----|----|
+| Directly loads data into Power BI | Opens Power Query Editor |
+| No changes applied to data | Data can be cleaned and shaped |
+| Faster process | Used for data preparation |
+| Used when data is clean | Used when data has errors or nulls |
+
+---
+
+## Question 3: What is a Fact Table and a Dimension Table? Give examples from the dataset.
+
+**Answer:**
+
+### Fact Table
+- Contains numerical and measurable data
+- Used for calculations and analysis
+
+**Examples:**
+- Confirmed_Cases  
+- Recovered_Cases  
+- Deaths  
+
+### Dimension Table
+- Contains descriptive or categorical data
+- Used for filtering and grouping
+
+**Examples:**
+- Country  
+- State  
+- Date  
+- Vaccination_Status  
+
+---
+
+## Question 4: Why is Star Schema preferred over Snowflake Schema in Power BI?
+
+**Answer:**  
+Star Schema is preferred in Power BI because:
+- Better performance and faster queries
+- Simple structure and easy to understand
+- Fewer table joins
+- Optimized for Power BI’s in-memory engine
+- Easier report development and maintenance
+
+---
+
+## Question 5: Identify and remove duplicate records based on Date, Country, and State.
+
+**Answer (Power Query Steps):**
+
+1. Open **Power Query Editor**
+2. Select columns `Date`, `Country`, and `State`
+3. Go to **Home → Remove Rows → Remove Duplicates**
+4. Power BI removes duplicate records based on selected columns
+5. Click **Close & Apply**
+
+---
+
+## Question 6: Identify and replace null values in Vaccination_Status.
+
+**Answer (Power Query Steps):**
+
+1. Open **Power Query Editor**
+2. Select the `Vaccination_Status` column
+3. Go to **Transform → Replace Values**
+4. Replace `null` with `Not Vaccinated`
+5. Click **OK**
+6. Apply changes
+
+---
+
+## Question 7: Create a new column to calculate Recovery Rate.
+
+**Answer (DAX):**
+
+```DAX
+Recovery Rate = 
+DIVIDE([Recovered_Cases], [Confirmed_Cases], 0)
+
+---
+
+## Question 8: Create a summarized table showing total confirmed cases by Country.
+**answer 
+
+Confirmed Cases by Country =
+SUMMARIZE(
+    Data,
+    Data[Country],
+    "Total Confirmed Cases", SUM(Data[Confirmed_Cases])
+)
+
