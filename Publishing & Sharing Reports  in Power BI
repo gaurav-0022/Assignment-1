@@ -1,0 +1,139 @@
+# Publishing & Sharing Reports in Power BI Assignment 
+
+## Q1. Explain why publishing and sharing reports is considered more important than just building dashboards in Power BI Desktop.
+
+Building dashboards in Power BI Desktop is only the development phase. Publishing and sharing are critical because they enable collaboration, decision-making, and real business value.  
+A report that stays in Desktop is limited to one user and one machine. Once published to Power BI Service, reports become accessible to stakeholders, can refresh automatically, follow security rules, and support enterprise governance.  
+In short, insights matter only when they reach the right people at the right time.
+
+---
+
+## Q2. Define Power BI Service and explain its role in comparison to Power BI Desktop in the reporting lifecycle.
+
+**Power BI Desktop** is used for:
+- Data loading and transformation  
+- Data modeling (relationships, DAX)
+- Report and visualization creation  
+
+**Power BI Service** is a cloud-based platform used for:
+- Publishing reports
+- Sharing and collaboration
+- Security (RLS, access control)
+- Scheduled refresh
+- Dashboards and Apps  
+
+In the reporting lifecycle:
+- **Desktop = Build**
+- **Service = Share, Secure, Govern, Consume**
+
+---
+
+## Q3. What does publishing a report mean in Power BI? List any two outcomes that occur after a report is published.
+
+Publishing a report means uploading a Power BI Desktop (.pbix) file to Power BI Service.
+
+Two outcomes after publishing:
+1. A report is created in the selected workspace.
+2. A dataset (semantic model) is created, which can be reused for other reports or dashboards.
+
+---
+
+## Q4. List and explain the steps involved in publishing a report from Power BI Desktop to Power BI Service in the correct sequence.
+
+1. Sign in to Power BI Desktop using your organizational account  
+2. Click **Publish** from the Home ribbon  
+3. Select the destination workspace  
+4. Power BI uploads the report and dataset  
+5. Open Power BI Service to verify the published content  
+
+---
+
+## Q5. Differentiate between Report and Dashboard in Power BI based on structure and usage.
+
+| Feature | Report | Dashboard |
+|------|------|------|
+| Pages | Multiple pages | Single page |
+| Data source | One dataset | Multiple datasets |
+| Interactivity | High (filters, drill-down) | Limited |
+| Creation | Power BI Desktop | Power BI Service |
+| Usage | Detailed analysis | High-level monitoring |
+
+---
+
+## Q6. Explain the difference between the following three sharing methods in Power BI Service and mention one use case for each.
+
+### 1. Direct Report Sharing
+- Share a report directly with individual users
+- Limited governance and scalability  
+
+**Use case:** Sharing a quick report with a teammate
+
+---
+
+### 2. Workspace Access
+- Users get access to all workspace content
+- Role-based permissions (Viewer, Contributor, etc.)
+
+**Use case:** Team collaboration during report development
+
+---
+
+### 3. Power BI Apps
+- Packaged and read-only content for large audiences
+- Strong governance and version control  
+
+**Use case:** Company-wide sales performance reporting
+
+---
+
+## Q7. Describe the four workspace roles available in Power BI and explain how access control is managed using these roles.
+
+### Workspace Roles:
+1. **Admin** – Full control (users, settings, delete workspace)
+2. **Member** – Publish, edit, and share content
+3. **Contributor** – Create and modify content, cannot manage users
+4. **Viewer** – Read-only access
+
+Access control is managed by assigning users to these roles, ensuring least privilege and secure collaboration.
+
+---
+
+## Q8. Why are Power BI Apps considered more secure and scalable than direct sharing?
+
+From a governance and enterprise perspective:
+- Apps provide centralized access control
+- Users cannot modify reports
+- Updates automatically reflect for all users
+- Easier license and audience management  
+
+This makes Apps ideal for large-scale, secure enterprise deployments.
+
+---
+
+## Q9. Explain Row-Level Security (RLS) in Power BI.  
+How does RLS ensure that different users see different data using the same report?
+
+Row-Level Security (RLS) restricts data access at the row level based on user identity.  
+Filters are applied using DAX roles, and Power BI checks the logged-in user’s credentials.
+
+Example:
+- Sales Manager (India) sees only India data
+- Sales Manager (US) sees only US data  
+
+Same report, different data views, secure and automatic.
+
+---
+
+## Q10. Assume an organization shares reports without using Apps, workspace roles, or RLS.  
+Discuss any three risks and how Power BI best practices prevent them.
+
+### Risk 1: Unauthorized data access  
+**Solution:** Use RLS and workspace roles
+
+### Risk 2: Data misuse or accidental edits  
+**Solution:** Use Power BI Apps (read-only access)
+
+### Risk 3: Lack of governance and version control  
+**Solution:** Centralized workspaces and controlled publishing
+
+Following Power BI best practices ensures security, compliance, scalability, and trust in data.
