@@ -1,0 +1,229 @@
+## Tableau Visualizations Assignment
+
+# 📊 Retail Sales Analysis — Tableau Project
+## Junior Data Analyst Business Case
+
+---
+
+## ✅ Task 1: Category Performance Analysis
+
+### ❓ Business Question
+Which product category generates the highest total revenue?
+
+### ✔️ Solution (Tableau Steps)
+1. Drag **Category** → Columns.
+2. Drag **Sales** → Rows.
+3. Change aggregation to **SUM(Sales)**.
+4. Sort bars in descending order.
+5. Apply **Bar Chart** visualization.
+
+### 📌 Insight
+The category with the highest bar represents the **top-performing revenue category**.
+
+---
+
+## ✅ Task 2: Sales Trend Analysis
+
+### ❓ Business Question
+How do sales fluctuate over time (monthly)?
+
+### ✔️ Solution (Tableau Steps)
+1. Drag **Order Date** → Columns.
+2. Change date format to **Month (Continuous)**.
+3. Drag **Sales** → Rows.
+4. Select **Line Chart**.
+
+### 📌 Insight
+- Identify peak months (high demand).
+- Detect slow periods for promotional planning.
+
+---
+
+## ✅ Task 3: Regional Contribution Analysis
+
+### ❓ Business Question
+Which region contributes the most to overall sales?
+
+### ✔️ Solution (Tableau Steps)
+1. Drag **Region** → Rows.
+2. Drag **Sales** → Columns.
+3. Select **Pie Chart** or **Bar Chart**.
+4. Add **Quick Table Calculation → Percent of Total** (optional).
+
+### 📌 Insight
+The region with the largest share indicates the strongest market.
+
+---
+
+## ✅ Task 4: Profitability Investigation
+
+### ❓ Business Question
+Are high sales orders reducing profitability?
+
+### ✔️ Solution (Tableau Steps)
+1. Drag **Sales** → Columns.
+2. Drag **Profit** → Rows.
+3. Add **Order ID** (or Sub-Category) → Detail.
+4. Choose **Scatter Plot**.
+5. Add reference line at Profit = 0.
+
+### 📌 Insight
+- Points below zero = **Loss-making orders**.
+- High sales + low profit indicates pricing or discount issues.
+
+---
+
+## ✅ Task 5: Business Growth Evaluation
+
+### ❓ Business Question
+Is the business growing consistently over time?
+
+### ✔️ Solution (Tableau Steps)
+1. Create cumulative sales:
+   - Right-click **Sales** → Quick Table Calculation → Running Total.
+2. Drag **Order Date** → Columns (Monthly).
+3. Drag **Running Total Sales** → Rows.
+4. Use **Line Chart**.
+
+### 📌 Insight
+An upward trend indicates steady business growth.
+
+---
+
+## ✅ Task 6: Category vs Region Performance
+
+### ❓ Business Question
+Which regions perform best for each category?
+
+### ✔️ Solution (Tableau Steps)
+1. Drag **Region** → Columns.
+2. Drag **Category** → Rows.
+3. Drag **Sales** → Color.
+4. Select **Heat Map**.
+
+### 📌 Insight
+- Darker colors = stronger markets.
+- Helps identify weak regions needing strategy improvement.
+
+---
+
+## ✅ Task 7: Product Prioritization
+
+### ❓ Business Question
+Which products create maximum business impact?
+
+### ✔️ Solution (Tableau Steps)
+1. Drag **Sales** → Columns.
+2. Drag **Profit** → Rows.
+3. Drag **Quantity** → Size.
+4. Drag **Sub-Category/Product** → Detail.
+5. Use **Bubble Chart**.
+
+### 📌 Insight
+Priority products:
+- High Sales
+- High Profit
+- High Quantity
+
+---
+
+## ✅ Task 8: Executive Dashboard Creation
+
+### ❓ Business Question
+How can leadership view all key insights in one place?
+
+### ✔️ Solution (Dashboard Steps)
+1. Create a new **Dashboard**.
+2. Add at least three visuals:
+   - Category Sales Bar Chart
+   - Monthly Sales Trend Line Chart
+   - Sales vs Profit Scatter Plot
+3. Add Filters:
+   - Region
+   - Category
+4. Enable **Use as Filter** for interactivity.
+
+### 📌 Expected Outcome
+A single interactive dashboard enabling executives to:
+- Monitor performance
+- Compare regions
+- Detect profitability risks
+- Track growth trends
+
+---
+
+## 🎯 Final Business Value
+This dashboard helps management:
+- Improve sales strategy
+- Optimize regional operations
+- Reduce loss-making orders
+- Focus on high-impact products
+
+---
+
+## ✅ Q9. Chart Selection Justification
+
+### ❓ Question
+Explain why different charts were used for different business questions in this analysis.
+
+### ✔️ Answer
+
+Different visualizations were selected based on the type of analysis required and how easily management can understand the insights:
+
+- **Bar Chart (Category Performance)**
+  - Best for comparing values across categories.
+  - Helps quickly identify the highest and lowest performing product categories.
+
+- **Line Chart (Sales Trend Analysis & Growth Evaluation)**
+  - Ideal for time-series data.
+  - Clearly shows trends, seasonality, and growth patterns over months.
+
+- **Pie Chart / Contribution Chart (Regional Analysis)**
+  - Useful for displaying percentage contribution to total sales.
+  - Helps management understand regional share at a glance.
+
+- **Scatter Plot (Sales vs Profit Analysis)**
+  - Best for analyzing relationships between two numerical variables.
+  - Helps detect loss-making or low-profit orders despite high sales.
+
+- **Heat Map (Category vs Region Performance)**
+  - Allows comparison across two dimensions simultaneously.
+  - Quickly highlights strong and weak markets using color intensity.
+
+- **Bubble Chart (Product Prioritization)**
+  - Supports multi-dimensional analysis.
+  - Combines Sales, Profit, and Quantity in one view for better product evaluation.
+
+👉 Each chart was chosen to maximize clarity, decision-making speed, and business understanding.
+
+---
+
+## ✅ Q10. Business Insight Summary
+
+### ❓ Question
+Summarize two key insights from your dashboard and explain how they help management make better decisions.
+
+### ✔️ Answer
+
+### 📊 Insight 1: High Sales Do Not Always Mean High Profit
+The Sales vs Profit analysis revealed that some orders generate strong revenue but produce low or negative profit.
+
+**Business Impact:**
+- Management can review pricing strategies and discount policies.
+- Helps reduce loss-making transactions.
+- Improves overall profitability instead of focusing only on revenue.
+
+---
+
+### 📈 Insight 2: Regional Performance Varies Significantly
+Regional contribution analysis showed that certain regions contribute a much larger share of total sales compared to others.
+
+**Business Impact:**
+- High-performing regions can receive increased inventory and marketing investment.
+- Underperforming regions may require promotional campaigns or operational improvements.
+- Supports better resource allocation and regional strategy planning.
+
+---
+
+🎯 **Overall Result:**  
+The dashboard enables data-driven decision-making by highlighting growth opportunities, profitability risks, and market performance differences.
