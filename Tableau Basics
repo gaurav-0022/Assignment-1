@@ -1,0 +1,179 @@
+# Tableau Basics Assignment Answers
+
+---
+
+## Q1. Explain what Tableau is and why it is preferred over traditional spreadsheet tools for data analysis. Also mention any two industries where Tableau is commonly used and explain one use case.
+
+**Answer:**
+
+Tableau is a data visualization and business intelligence (BI) tool used to analyze data and create interactive dashboards and reports. It allows users to connect to multiple data sources, transform data, and visualize insights using charts, graphs, and maps.
+
+**Why Tableau is preferred over traditional spreadsheet tools:**
+- Handles large datasets efficiently.
+- Provides interactive and dynamic visualizations.
+- Drag-and-drop interface requires minimal coding.
+- Real-time data connection and automatic updates.
+- Advanced analytics and dashboard capabilities.
+
+**Industries where Tableau is commonly used:**
+1. Retail Industry  
+2. Healthcare Industry
+
+**Use Case (Retail):**
+Retail companies use Tableau to analyze sales performance across regions, identify profitable products, and understand customer purchasing trends to improve inventory and marketing decisions.
+
+---
+
+## Q2. After connecting to the Sample – Superstore dataset:
+
+### a) Main types of fields available:
+- Time-based fields (Order Date, Ship Date)
+- Geographical fields (Country, State, Region, City)
+- Numerical fields (Sales, Profit, Quantity, Discount)
+- Categorical/Text fields (Category, Sub-Category, Segment)
+
+### b) Four Dimensions and Four Measures:
+
+**Dimensions (Blue fields):**
+- Category
+- Sub-Category
+- Region
+- State
+
+**Measures (Green fields):**
+- Sales
+- Profit
+- Quantity
+- Discount
+
+---
+
+## Q3. Create a Bar Chart showing Total Sales by Category.
+
+**Explanation:**
+- Field placed in Rows: `Category`
+- Field placed in Columns: `Sales`
+- Aggregation applied: `SUM(Sales)` (default aggregation)
+
+Tableau automatically creates a bar chart when a dimension and a measure are used together.
+
+---
+
+## Q4. Insight from comparing Sales and Profit together & Profit by Sub-Category chart.
+
+**Insight:**
+Comparing Sales and Profit helps identify products that generate high revenue but low profit or even losses. High sales do not always mean high profitability.
+
+**Steps to analyze Profit by Sub-Category:**
+1. Drag `Sub-Category` to Rows.
+2. Drag `Profit` to Columns.
+3. Tableau creates a bar chart showing profit performance for each sub-category.
+
+---
+
+## Q5. Create a Line Chart to show Sales Trend over Order Date.
+
+**Chosen Date Level:** Month
+
+**Reason:**
+Monthly analysis provides a balanced view of trends without being too detailed (daily) or too summarized (yearly).
+
+**Why line charts are suitable:**
+- Show trends over time clearly.
+- Highlight growth, decline, and seasonal patterns.
+- Easy comparison between different time periods.
+
+---
+
+## Q6. Apply a Basic Filter:
+
+**Conditions:**
+- Region = West
+- Category = Technology
+
+**Steps:**
+1. Drag `Region` to the **Filters Shelf**.
+2. Select only “West”.
+3. Drag `Category` to the **Filters Shelf**.
+4. Select only “Technology”.
+
+**Shelf Used:** Filters Shelf
+
+---
+
+## Q7. Business importance of geographical analysis & Map creation.
+
+**Business Importance:**
+- Identifies high and low performing locations.
+- Helps optimize regional sales strategies.
+- Supports logistics and supply chain decisions.
+- Improves market expansion planning.
+
+**Steps to create Map showing Sales by State:**
+1. Drag `State` into the view (Tableau generates a map automatically).
+2. Drag `Sales` onto Color or Size on the Marks card.
+3. The map displays sales distribution across states.
+
+---
+
+## Q8. Difference between Worksheet and Dashboard.
+
+**Worksheet:**
+- A single visualization (chart, graph, or map).
+
+**Dashboard:**
+- Combination of multiple worksheets displayed together.
+
+**Why dashboards are useful:**
+- Provide complete business overview in one screen.
+- Allow interactive filtering across charts.
+- Help decision-makers quickly understand insights.
+
+---
+
+## Q9. Tableau Prep and its importance.
+
+**What is Tableau Prep?**
+Tableau Prep is a data preparation tool used to clean, combine, and transform raw data before analysis.
+
+**Importance:**
+- Ensures clean and reliable data.
+- Reduces errors in analysis.
+- Saves time during reporting.
+
+### Steps:
+
+**Remove Null Values:**
+1. Open data in Tableau Prep.
+2. Select the field.
+3. Filter out Null values using Clean step.
+
+**Remove Duplicate Records:**
+1. Use Aggregate or Clean step.
+2. Identify duplicate rows.
+3. Remove duplicates using grouping or filtering.
+
+**Change Incorrect Data Types:**
+1. Select the column.
+2. Click data type icon.
+3. Change to correct type (Date, Number, String, etc.).
+
+---
+
+## Q10. Retail Manager Analysis
+
+### a) Charts to use:
+- Highest profit by category → Bar Chart
+- Poor performing region → Bar Chart or Map
+- Sales change over time → Line Chart
+
+### b) One key insight:
+A category may generate high sales but low profit due to heavy discounts.
+
+### c) Business decision-making benefit:
+- Helps focus on profitable products.
+- Improves regional strategies.
+- Supports forecasting and inventory planning.
+- Enables data-driven business decisions.
+
+---
