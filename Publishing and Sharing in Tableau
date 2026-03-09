@@ -1,0 +1,143 @@
+# Publishing and Sharing in Tableau – 
+
+## Q1. What is the key difference between publishing a dashboard on Tableau Public versus Tableau Server/Cloud in terms of accessibility and data security?
+
+**Answer:**
+
+- **Tableau Public**
+  - Dashboards are **completely public**.
+  - Anyone on the internet can view and download the data.
+  - It is **not secure** for confidential or business data.
+
+- **Tableau Server / Tableau Cloud**
+  - Dashboards are **secure and access-controlled**.
+  - Only **authorized users** can view or interact with the dashboard.
+  - Administrators can control **permissions and authentication**.
+
+**Summary:**  
+Tableau Public is open and public, while Tableau Server/Cloud provides **secure, permission-based access to dashboards and data**.
+
+---
+
+## Q2. When publishing a Tableau dashboard, what happens to a live connection compared to an extract? How does this affect data refresh and performance?
+
+**Answer:**
+
+- **Live Connection**
+  - The dashboard queries the **original data source directly**.
+  - Data is always **real-time and up to date**.
+  - Performance may be **slower** depending on database speed.
+
+- **Extract**
+  - Tableau creates a **snapshot of the data** stored locally.
+  - Improves **dashboard performance and loading speed**.
+  - Data must be **refreshed manually or on a scheduled refresh**.
+
+**Summary:**  
+Live connections provide **real-time data**, while extracts provide **better performance but require refresh schedules**.
+
+---
+
+## Q3. In Tableau Server or Cloud (conceptually), which feature allows administrators to control which users can view, interact with, or edit a published dashboard?
+
+**Answer:**
+
+The feature used is **Permissions**.
+
+Administrators can set permissions to control:
+- Who can **view dashboards**
+- Who can **interact with filters**
+- Who can **edit or download workbooks**
+- Who can **publish content**
+
+Permissions are managed at:
+- **Project level**
+- **Workbook level**
+- **Data source level**
+
+---
+
+## Q4. If you want users to view a dashboard but not download the underlying data, which permission setting would you adjust in Tableau Server?
+
+**Answer:**
+
+You should **disable the "Download Data" permission**.
+
+Steps conceptually:
+1. Open **Workbook Permissions**
+2. Modify the user or group permissions
+3. **Uncheck or deny "Download Data"**
+
+This allows users to:
+- **View the dashboard**
+
+But prevents them from:
+- Downloading **underlying or summarized data**
+
+---
+
+## Q5. Name two methods by which a Tableau dashboard can be embedded into a web page or website.
+
+**Answer:**
+
+Two common methods are:
+
+1. **Embed Code (Iframe)**
+   - Tableau provides an **HTML embed code**.
+   - It can be pasted directly into a website.
+
+2. **Tableau JavaScript API**
+   - Developers use the **Tableau JavaScript API** to embed dashboards.
+   - Allows **interactive control and customization**.
+
+---
+
+## Q6. List two best practices you should follow when preparing a dashboard for public sharing to ensure data security and privacy.
+
+**Answer:**
+
+1. **Remove sensitive or confidential data**
+   - Avoid publishing personal data, financial records, or internal information.
+
+2. **Use aggregated data instead of raw data**
+   - Show summarized insights rather than detailed records.
+
+Additional good practices:
+- Hide unused fields
+- Verify data sources before publishing
+- Use permissions properly
+
+---
+
+## Q7. After publishing a dashboard, users report a “Data not found” error. What is the most common cause related to data source settings?
+
+**Answer:**
+
+The most common cause is:
+
+**The data source path or connection is broken.**
+
+Possible reasons include:
+- The **database server location changed**
+- The **file path is incorrect**
+- The **data source was not published with the workbook**
+- Missing **database credentials**
+
+To fix it:
+- Reconnect or **republish the data source correctly**.
+
+---
+
+## Q8. When embedding a Tableau dashboard into a secure internal portal, what two additional security measures should be implemented to ensure only authorized users can access the embedded content?
+
+**Answer:**
+
+1. **User Authentication**
+   - Use **Single Sign-On (SSO)** or **Tableau login authentication**.
+
+2. **User Permissions and Role-Based Access**
+   - Assign permissions to control who can **view or interact with the dashboard**.
+
+These measures ensure that **only authorized users within the organization can access the embedded dashboard**.
+
+---
