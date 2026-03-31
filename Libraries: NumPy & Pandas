@@ -1,0 +1,90 @@
+
+
+# Q1: Load dataset and display first 5 rows + info
+df = pd.read_csv('retail_dataset.csv')  # Make sure file name matches
+
+print("First 5 Rows:")
+print(df.head())
+
+print("\nDataset Info:")
+print(df.info())
+
+
+# Q2: Check missing values
+print("\nMissing Values per Column:")
+print(df.isnull().sum())
+
+total_missing = df.isnull().sum().sum()
+print("\nTotal Missing Values:", total_missing)
+
+
+# Q3: Fill missing values in Quantity and Price with mean
+df['Quantity'].fillna(df['Quantity'].mean(), inplace=True)
+df['Price'].fillna(df['Price'].mean(), inplace=True)
+
+
+# Q4: Remove rows where Product Category or Region is missing
+df.dropna(subset=['Product Category', 'Region'], inplace=True)
+
+
+# Q5: Create Revenue column
+df['Revenue'] = df['Quantity'] * df['Price']
+
+print("\nDataset with Revenue Column:")
+print(df.head())
+
+
+# Q6: Total Revenue using NumPy
+total_revenue = np.sum(df['Revenue'])
+print("\nTotal Revenue:", total_revenue)
+
+
+# Q7: Revenue by Product Category
+category_revenue = df.groupby('Product Category')['Revenue'].sum()
+
+print("\nRevenue by Category:")
+print(category_revenue)
+
+
+# Q8: Top 3 and Bottom 3 Categories
+top_3 = category_revenue.sort_values(ascending=False).head(3)
+bottom_3 = category_revenue.sort_values().head(3)
+
+print("\nTop 3 Categories:")
+print(top_3)
+
+print("\nBottom 3 Categories:")
+print(bottom_3)
+
+
+# Q9: Revenue by Region
+region_revenue = df.groupby('Region')['Revenue'].sum()
+
+print("\nRevenue by Region:")
+print(region_revenue)
+
+highest_region = region_revenue.idxmax()
+lowest_region = region_revenue.idxmin()
+
+print("\nHighest Revenue Region:", highest_region)
+print("Lowest Revenue Region:", lowest_region)
+
+
+# Q10: Monthly Revenue + Stats
+df['Date'] = pd.to_datetime(df['Date'])
+df['Month'] = df['Date'].dt.month
+
+monthly_revenue = df.groupby('Month')['Revenue'].sum()
+
+print("\nMonthly Revenue:")
+print(monthly_revenue)
+
+# NumPy statistics
+mean_rev = np.mean(df['Revenue'])
+median_rev = np.median(df['Revenue'])
+std_rev = np.std(df['Revenue'])
+
+print("\nRevenue Statistics:")
+print("Mean:", mean_rev)
+print("Median:", median_rev)
+print("Standard Deviation:", std_rev)
