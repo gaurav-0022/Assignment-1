@@ -1,0 +1,220 @@
+# Copilot with SQL and Excel Assignment
+
+## Question 1
+### Use GitHub Copilot to create a table `SalesData` whose columns are:
+- CustomerID
+- Name
+- Age
+- City
+- PurchaseAmount
+- PurchaseDate
+
+Also insert 10,000 rows of random data.
+
+---
+
+# Answer
+
+## Step 1: Create Database
+
+```sql
+CREATE DATABASE SalesDB;
+GO
+
+USE SalesDB;
+GO
+```
+
+---
+
+## Step 2: Create Table
+
+```sql
+CREATE TABLE SalesData (
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    City VARCHAR(50),
+    PurchaseAmount DECIMAL(10,2),
+    PurchaseDate DATE
+);
+```
+
+---
+
+## Step 3: Insert 10,000 Random Rows
+
+```sql
+DECLARE @Counter INT = 1;
+
+WHILE @Counter <= 10000
+BEGIN
+    INSERT INTO SalesData (
+        Name,
+        Age,
+        City,
+        PurchaseAmount,
+        PurchaseDate
+    )
+    VALUES (
+        CONCAT('Customer', @Counter),
+
+        FLOOR(RAND() * 43) + 18,
+
+        CASE FLOOR(RAND() * 5)
+            WHEN 0 THEN 'Mumbai'
+            WHEN 1 THEN 'Pune'
+            WHEN 2 THEN 'Delhi'
+            WHEN 3 THEN 'Bangalore'
+            ELSE 'Hyderabad'
+        END,
+
+        ROUND((RAND() * 5000) + 100, 2),
+
+        DATEADD(DAY, -FLOOR(RAND() * 365), GETDATE())
+    );
+
+    SET @Counter = @Counter + 1;
+END;
+```
+
+---
+
+## Step 4: Verify Data
+
+```sql
+SELECT TOP 10 *
+FROM SalesData;
+```
+
+---
+
+# Question 2
+
+## Use Copilot to:
+
+1. Find total sales per city
+2. Find top 5 cities by revenue
+
+---
+
+# Answer
+
+## Total Sales Per City
+
+```sql
+SELECT
+    City,
+    SUM(PurchaseAmount) AS TotalSales
+FROM SalesData
+GROUP BY City;
+```
+
+---
+
+## Top 5 Cities by Revenue
+
+```sql
+SELECT TOP 5
+    City,
+    SUM(PurchaseAmount) AS TotalRevenue
+FROM SalesData
+GROUP BY City
+ORDER BY TotalRevenue DESC;
+```
+
+---
+
+# Question 3
+
+## Ask Copilot:
+Find customers with purchases above average.
+
+---
+
+# Answer
+
+```sql
+SELECT
+    CustomerID,
+    Name,
+    City,
+    PurchaseAmount
+FROM SalesData
+WHERE PurchaseAmount > (
+    SELECT AVG(PurchaseAmount)
+    FROM SalesData
+);
+```
+
+---
+
+# GitHub Copilot Prompts Used
+
+## Prompt 1
+
+```sql
+-- Create a table SalesData with columns CustomerID, Name,
+-- Age, City, PurchaseAmount, PurchaseDate and insert
+-- 10000 random rows
+```
+
+---
+
+## Prompt 2
+
+```sql
+-- Find total sales per city
+```
+
+---
+
+## Prompt 3
+
+```sql
+-- Show top 5 cities by revenue
+```
+
+---
+
+## Prompt 4
+
+```sql
+-- Find customers with purchase amount above average
+```
+
+---
+
+# Final Output Checks
+
+## Total Rows
+
+```sql
+SELECT COUNT(*) AS TotalRows
+FROM SalesData;
+```
+
+---
+
+## Maximum Purchase Amount
+
+```sql
+SELECT MAX(PurchaseAmount) AS HighestPurchase
+FROM SalesData;
+```
+
+---
+
+## Minimum Purchase Amount
+
+```sql
+SELECT MIN(PurchaseAmount) AS LowestPurchase
+FROM SalesData;
+```
+
+---
+
+# Tools Used
+- SQL Server Management Studio (SSMS)
+- GitHub Copilot
+- SQL Server
